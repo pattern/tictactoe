@@ -70,6 +70,22 @@ function TicTacToeCtrl($scope) {
       }
     }
     
+    // Check reverse diagonal
+    diag_rev_outer_loop:
+    for (var row = 0; row < $scope.board_size; row++) {
+      var col = ($scope.board_size - 1) - row;
+      if (typeof $scope.board[row][col] == 'undefined')
+        break;
+      if (row > 0) {
+        if ($scope.board[row-1][col+1] != $scope.board[row][col]) {
+          break;
+        } else {
+          if (row == $scope.board_size - 1)
+            return [true, $scope.board[row][0]];
+        }
+      }
+    }
+
     return [false, undefined];
   };
 }
