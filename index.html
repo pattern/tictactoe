@@ -11,7 +11,13 @@
 </head>
 <body ng-controller="TicTacToeCtrl">
 
-
+<div id="board">
+  <div class="row clearfix" ng-repeat="row in board track by $index">
+    <div class="pane" ng-click="mark_pane($parent.$index, $index)" ng-repeat="pane in row track by $index">
+      {{ pane }}
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
