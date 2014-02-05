@@ -41,6 +41,20 @@ function TicTacToeCtrl($scope) {
       }
       return [true, $scope.board[row][0]];
     }
+    
+    // Check columns
+    col_outer_loop:
+    for (var col = 0; col < $scope.board_size; col++) {
+      if (typeof $scope.board[0][col] == 'undefined') {
+        continue;
+      }
+      for (var row = 1; row < $scope.board_size; row++) {
+        if ($scope.board[row-1][col] != $scope.board[row][col])
+          continue col_outer_loop;
+      }
+      return [true, $scope.board[0][col]];
+    }
+    
     return [false, undefined];
   };
 }
