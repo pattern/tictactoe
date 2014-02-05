@@ -32,9 +32,8 @@ function TicTacToeCtrl($scope) {
     // Check rows
     row_outer_loop:
     for (var row = 0; row < $scope.board_size; row++) {
-      if (typeof $scope.board[row][0] == 'undefined') {
+      if (typeof $scope.board[row][0] == 'undefined')
         continue;
-      }
       for (var idx = 1; idx < $scope.board_size; idx++) {
         if ($scope.board[row][idx-1] != $scope.board[row][idx])
           continue row_outer_loop;
@@ -45,9 +44,8 @@ function TicTacToeCtrl($scope) {
     // Check columns
     col_outer_loop:
     for (var col = 0; col < $scope.board_size; col++) {
-      if (typeof $scope.board[0][col] == 'undefined') {
+      if (typeof $scope.board[0][col] == 'undefined')
         continue;
-      }
       for (var row = 1; row < $scope.board_size; row++) {
         if ($scope.board[row-1][col] != $scope.board[row][col])
           continue col_outer_loop;
