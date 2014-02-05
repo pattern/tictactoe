@@ -22,5 +22,30 @@ function TicTacToeCtrl($scope) {
         $scope.current_move = 'A';
       }
     }
+    check_win = $scope.check_for_win();
+    if (check_win[0]) {
+      console.log('winner found!  Its: ' + check_win[1]);
+    }
+  };
+  
+  $scope.check_for_win = function () {
+    // Check rows
+    row_outer_loop:
+    for (var row = 0; row < $scope.board_size; row++) {
+      if (typeof $scope.board[row][0] == 'undefined') {
+        continue;
+      }
+      for (var idx = 1; idx < $scope.board_size; idx++) {
+        if ($scope.board[row][idx-1] != $scope.board[row][idx])
+          continue row_outer_loop;
+      }
+      return [true, $scope.board[row][0]];
+    }
+    return [false, undefined];
   };
 }
+
+
+
+
+
