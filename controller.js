@@ -4,6 +4,7 @@ function TicTacToeCtrl($scope) {
   
   $scope.initialize_game = function () {
     $scope.current_move = 'A';
+    $scope.game_state = 'in_progress';
     $scope.board = [];
     for (var i = 0; i < $scope.board_size; i++) {
       $scope.board[i] = new Array($scope.board_size);
@@ -25,6 +26,9 @@ function TicTacToeCtrl($scope) {
     check_win = $scope.check_for_win();
     if (check_win[0]) {
       console.log('winner found!  Its: ' + check_win[1]);
+      $scope.game_state = 'win_' + check_win[1];
+    } else if ($scope.check_for_draw()) {
+      $scope.game_state = 'draw';
     }
   };
   
