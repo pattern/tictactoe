@@ -3,3 +3,7 @@
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
+
+body { padding: 50px; }
+
+div.pane { display: inline; float: left; width: 80px; height: 80px; border: 2px solid #000; }
