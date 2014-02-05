@@ -12,6 +12,15 @@ function TicTacToeCtrl($scope) {
   $scope.initialize_game();
   
   $scope.mark_pane = function (parent_index, index) {
-    console.log('marking pane (' + parent_index + ',' + index + ')!');
+    // If this pane is empty
+    if (typeof $scope.board[parent_index][index] == 'undefined') {
+      if ($scope.current_move == 'A') {
+        $scope.board[parent_index][index] = 'X';
+        $scope.current_move = 'B';
+      } else {
+        $scope.board[parent_index][index] = 'O';
+        $scope.current_move = 'A';
+      }
+    }
   };
 }
