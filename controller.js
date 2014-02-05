@@ -86,6 +86,16 @@ function TicTacToeCtrl($scope) {
 
     return [false, undefined];
   };
+  
+  $scope.check_for_draw = function () {
+    for (var row = 0; row < $scope.board_size; row++) {
+      for (var col = 0; col < $scope.board_size; col++) {
+        if (typeof $scope.board[row][col] == 'undefined')
+          return false;
+      }
+    }
+    return true;
+  };
 }
 
 
