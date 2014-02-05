@@ -4,6 +4,6 @@
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
 
-body { padding: 50px; }
+body { padding: 50px; font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; }
 
-div.pane { display: inline; float: left; width: 80px; height: 80px; border: 2px solid #000; }
+div.pane { display: inline; float: left; width: 80px; height: 80px; border: 2px solid #000; text-align: center; font-size: 80px; }
