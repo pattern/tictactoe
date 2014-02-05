@@ -55,6 +55,21 @@ function TicTacToeCtrl($scope) {
       return [true, $scope.board[0][col]];
     }
     
+    // Check forward diagonal
+    diag_outer_loop:
+    for (var idx = 0; idx < $scope.board_size; idx++) {
+      if (typeof $scope.board[idx][idx] == 'undefined')
+        break;
+      if (idx > 0) {
+        if ($scope.board[idx-1][idx-1] != $scope.board[idx][idx]) {
+          break;
+        } else {
+          if (idx == $scope.board_size - 1)
+            return [true, $scope.board[0][0]];
+        }
+      }
+    }
+    
     return [false, undefined];
   };
 }
