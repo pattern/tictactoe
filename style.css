@@ -8,6 +8,9 @@
 body { padding: 50px 200px;  }
 h1 { font-size: 60px; }
 
+.left_column, .right_column { display: inline; float: left; width: 400px; }
+
 .pane { display: inline; float: left; width: 80px; height: 80px; border: 2px solid #000; text-align: center; font-size: 80px; font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; }
 
-.left_column, .right_column { display: inline; float: left; width: 400px; }
+.player { padding: 15px; margin-bottom: 30px; font-size: 30px; display: inline-block; -webkit-border-radius: 8px 8px; -moz-border-radius: 8px 8px; border-radius: 8px 8px;}
+.current_move { background-color: #ddd; }
