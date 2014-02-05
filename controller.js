@@ -25,8 +25,8 @@ function TicTacToeCtrl($scope) {
     }
     check_win = $scope.check_for_win();
     if (check_win[0]) {
-      console.log('winner found!  Its: ' + check_win[1]);
-      $scope.game_state = 'win_' + check_win[1];
+      var winning_player = check_win[1] == 'X' ? 'A' : 'B';
+      $scope.game_state = 'win_' + winning_player;
     } else if ($scope.check_for_draw()) {
       $scope.game_state = 'draw';
     }
